@@ -21,9 +21,17 @@
         </dependency>
 
         <dependency>
-            <groupId>org.csource</groupId>
+            <groupId>com.github.jwenjian</groupId>
             <artifactId>fastdfs-client-java</artifactId>
-            <version>1.27-SNAPSHOT</version>
+            <version>1.27</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
 </project>
