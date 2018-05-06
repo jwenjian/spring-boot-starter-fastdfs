@@ -1,6 +1,14 @@
 package com.github.jwenjian.springboot.starter.fastdfs;
 
-public class FastDfsConfigKeyContant {
+import java.util.Properties;
+
+/**
+ * Constants for fastdfs property key.
+ *
+ * @see org.csource.fastdfs.ClientGlobal#initByProperties(Properties)
+ * @author jwenjian
+ */
+public class FastDfsConfigKeyConstant {
 
     public static final String KEY_TRACKER_SERVERS = "fastdfs.tracker_servers";
 

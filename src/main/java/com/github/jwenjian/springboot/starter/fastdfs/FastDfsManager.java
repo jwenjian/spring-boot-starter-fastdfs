@@ -2,6 +2,11 @@ package com.github.jwenjian.springboot.starter.fastdfs;
 
 import org.csource.fastdfs.*;
 
+/**
+ * A manager(wrapper) of original fastdfs client.
+ *
+ * @author jwenjian
+ */
 public class FastDfsManager {
 
     private TrackerClient trackerClient;

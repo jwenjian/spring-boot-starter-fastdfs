@@ -6,6 +6,11 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.util.Properties;
 
+/**
+ * Properties bean mapping spring.fastdfs.* config items.
+ *
+ * @author jwenjian
+ */
 @Component
 @ConfigurationProperties(prefix = "spring.fastdfs")
 public class FastDfsProperties {
@@ -94,13 +99,13 @@ public class FastDfsProperties {
             properties = new Properties();
         }
 
-        setFastDfsProperty(FastDfsConfigKeyContant.KEY_TRACKER_SERVERS, trackerServers);
-        setFastDfsProperty(FastDfsConfigKeyContant.KEY_CONN_TIMEOUT_IN_SECONDS, connectTimeoutInSeconds);
-        setFastDfsProperty(FastDfsConfigKeyContant.KEY_NETWORK_TIMEOUT_IN_SECONDS, networkTimeoutInSeconds);
-        setFastDfsProperty(FastDfsConfigKeyContant.KEY_CHARSET, charset);
-        setFastDfsProperty(FastDfsConfigKeyContant.KEY_HTTP_ANTI_STEAL_TOKEN, httpAntiStealToken);
-        setFastDfsProperty(FastDfsConfigKeyContant.KEY_HTTP_SECRET_KEY, httpSecretKey);
-        setFastDfsProperty(FastDfsConfigKeyContant.KEY_HTTP_TRACKER_HTTP_PORT, httpTrackerHttpPort);
+        setFastDfsProperty(FastDfsConfigKeyConstant.KEY_TRACKER_SERVERS, trackerServers);
+        setFastDfsProperty(FastDfsConfigKeyConstant.KEY_CONN_TIMEOUT_IN_SECONDS, connectTimeoutInSeconds);
+        setFastDfsProperty(FastDfsConfigKeyConstant.KEY_NETWORK_TIMEOUT_IN_SECONDS, networkTimeoutInSeconds);
+        setFastDfsProperty(FastDfsConfigKeyConstant.KEY_CHARSET, charset);
+        setFastDfsProperty(FastDfsConfigKeyConstant.KEY_HTTP_ANTI_STEAL_TOKEN, httpAntiStealToken);
+        setFastDfsProperty(FastDfsConfigKeyConstant.KEY_HTTP_SECRET_KEY, httpSecretKey);
+        setFastDfsProperty(FastDfsConfigKeyConstant.KEY_HTTP_TRACKER_HTTP_PORT, httpTrackerHttpPort);
     }
 
     private void setFastDfsProperty(String key, Object value) {
