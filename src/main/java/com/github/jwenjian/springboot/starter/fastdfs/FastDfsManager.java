@@ -17,6 +17,14 @@ public class FastDfsManager {
 
     private StorageClient1 storageClient1;
 
+    /**
+     * Constructor
+     *
+     * @param trackerClient Initialized tracker client instance
+     * @param trackerServer Initialized tracker server instance
+     * @param storageServer Initialized storage server instance
+     * @param storageClient1 Initialized storage client1 instance
+     */
     FastDfsManager(TrackerClient trackerClient, TrackerServer trackerServer, StorageServer storageServer, StorageClient1 storageClient1) {
         this.trackerClient = trackerClient;
         this.trackerServer = trackerServer;
