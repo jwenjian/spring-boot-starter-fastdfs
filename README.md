@@ -35,26 +35,28 @@ Add configuration items to your `application-${profile}.properties` or `applicat
 
 - Properties
 ```properties
-# spring.fastdfs.tracker_servers=
-# spring.fastdfs.connect_timeout_in_seconds=
-# spring.fastdfs.network_timeout_in_seconds=
-# spring.fastdfs.charset=
-# spring.fastdfs.http_anti_steal_token=
-# spring.fastdfs.http_secret_key=
-# spring.fastdfs.http_tracker_http_port=
+spring.fastdfs.tracker_servers= # the tracker server urls
+spring.fastdfs.connect_timeout_in_seconds= # the connect timeout in seconds
+spring.fastdfs.network_timeout_in_seconds= # the network timeout in seconds
+spring.fastdfs.charset= # the.charset
+spring.fastdfs.http_anti_steal_token= # the http anti-steal token
+spring.fastdfs.http_secret_key= # the http secret key
+spring.fastdfs.http_tracker_http_port= # the http tracker http port
+spring.fastdfs.init_conn_on_load= # if init connection on server loaded
 ```
 
 - Yaml
 ```yaml
 spring:
     fastdfs:
-        # tracker_servers:
-        # connect_timeout_in_seconds:
-        # network_timeout_in_seconds:
-        # charset: UTF-8
-        # http_anti_steal_token:
-        # http_secret_key:
-        # http_tracker_http_port:
+        tracker_servers: # the tracker server urls
+        connect_timeout_in_seconds: # the connect timeout in seconds
+        network_timeout_in_seconds: # the network timeout in seconds
+        charset: # the.charset
+        http_anti_steal_token: # the http anti-steal token
+        http_secret_key: # the http secret key
+        http_tracker_http_port: # the http tracker http port
+        init_conn_on_load: # if init connection on server loaded
 ```
 
 ## How to use

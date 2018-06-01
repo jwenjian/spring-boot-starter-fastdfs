@@ -15,21 +15,51 @@ import java.util.Properties;
 @ConfigurationProperties(prefix = "spring.fastdfs")
 public class FastDfsProperties {
 
+    /**
+     * The properties instance
+     */
     private Properties properties;
 
+    /**
+     * The value configured by 'spring.fastdfs.tracker_servers'
+     */
     private String trackerServers;
 
+    /**
+     * The value configured by 'spring.fastdfs.connect_timeout_in_seconds'
+     */
     private Integer connectTimeoutInSeconds;
 
+    /**
+     * The value configured by 'spring.fastdfs.network_timeout_in_seconds'
+     */
     private Integer networkTimeoutInSeconds;
 
+    /**
+     * The value configured by 'spring.fastdfs.charset'
+     */
     private String charset;
 
+    /**
+     * The value configured by 'spring.fastdfs.http_anti_steal_token'
+     */
     private Boolean httpAntiStealToken;
 
+    /**
+     * The value configured by 'spring.fastdfs.http_secret_key'
+     */
     private String httpSecretKey;
 
+    /**
+     * The value configured by 'spring.fastdfs.http_tracker_http_port'
+     */
     private Integer httpTrackerHttpPort;
+
+    /**
+     * The value configured by 'spring.fastdfs.init_conn_on_load'
+     * This item was designed for this starter to give you the control the timing to init the connection, default to true
+     */
+    private Boolean initConnOnLoad = true;
 
     public Properties getProperties() {
         return properties;
@@ -89,6 +119,14 @@ public class FastDfsProperties {
 
     public void setHttpTrackerHttpPort(Integer httpTrackerHttpPort) {
         this.httpTrackerHttpPort = httpTrackerHttpPort;
+    }
+
+    public Boolean getInitConnOnLoad() {
+        return initConnOnLoad;
+    }
+
+    public void setInitConnOnLoad(Boolean initConnOnLoad) {
+        this.initConnOnLoad = initConnOnLoad;
     }
 
     @PostConstruct

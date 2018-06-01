@@ -23,6 +23,11 @@ public class FastDfsConfiguration {
     @Autowired
     private FastDfsProperties fastDfsProperties;
 
+    /**
+     * If the fastdfs connection connInitialized
+     */
+    private boolean connInitialized;
+
 
     /**
      * Set the scope of this bean to 'prototype' to avoid concurrency usage issue of StorageClient instance.
@@ -34,8 +39,12 @@ public class FastDfsConfiguration {
     @Scope("prototype")
     @Bean
     public FastDfsManager fastDfsManager() throws IOException, MyException {
-        // Do the init
-        ClientGlobal.initByProperties(fastDfsProperties.getProperties());
+        // Check the connection initialization
+        if (!connInitialized) {
+            // Do the init
+            ClientGlobal.initByProperties(fastDfsProperties.getProperties());
+            this.connInitialized = true;
+        }
 
         final TrackerClient trackerClient = new TrackerClient();
         final TrackerServer trackerServer = trackerClient.getConnection();
@@ -53,7 +62,12 @@ public class FastDfsConfiguration {
      */
     @PostConstruct
     private void initFastDfs() throws IOException, MyException {
-        // Do the init
-        ClientGlobal.initByProperties(fastDfsProperties.getProperties());
+        if (fastDfsProperties.getInitConnOnLoad() != null && fastDfsProperties.getInitConnOnLoad()) {
+            // Do the init
+            ClientGlobal.initByProperties(fastDfsProperties.getProperties());
+
+            // Set the initialized flag
+            this.connInitialized = true;
+        }
     }
 }
